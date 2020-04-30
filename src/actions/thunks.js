@@ -7,7 +7,7 @@ import {
   fetchGlobalCovid
 } from "./index";
 
-export const fetchCountryAction = () => async (dispatch, state) => {
+export const fetchCountryAction = () => async dispatch => {
   dispatch(isFetching());
   try {
     const response = await axios.get("https://restcountries.eu/rest/v2/all");
@@ -19,7 +19,7 @@ export const fetchCountryAction = () => async (dispatch, state) => {
   }
 };
 
-export const fetchGlobalCovidAction = () => async (dispatch, state) => {
+export const fetchGlobalCovidAction = () => async dispatch => {
   dispatch(isFetching());
   try {
     const response = await axios.get("https://api.covid19api.com/summary");
@@ -32,16 +32,12 @@ export const fetchGlobalCovidAction = () => async (dispatch, state) => {
   }
 };
 
-export const fetchSelectedCountryAction = country => async (
-  dispatch,
-  state
-) => {
+export const fetchSelectedCountryAction = country => async dispatch => {
   dispatch(isFetching());
   try {
     const response = await axios.get(
       `https://api.covid19api.com/total/country/${country}`
     );
-    console.log(response);
     const { data } = response;
     dispatch(fetchSelectedCountry({ data, country }));
     dispatch(doneFetching());

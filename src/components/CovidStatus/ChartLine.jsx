@@ -33,14 +33,11 @@ const ChartLine = ({ data }) => {
 };
 
 ChartLine.propTypes = {
-  data: PropTypes.arrayOf({
-    labels: PropTypes.string,
-    dataSet: PropTypes.dataSet
-  })
+  data: PropTypes.shape()
 };
 
 ChartLine.defaultProps = {
-  data: []
+  data: {}
 };
 
 export default ChartLine;

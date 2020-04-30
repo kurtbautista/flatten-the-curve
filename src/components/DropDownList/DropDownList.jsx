@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
@@ -41,7 +40,9 @@ DropDownList.propTypes = {
   name: PropTypes.string,
   isLoading: PropTypes.bool,
   className: PropTypes.string,
-  isClearable: PropTypes.string
+  isClearable: PropTypes.bool,
+  classNamePrefix: PropTypes.string,
+  handleInputChange: PropTypes.func
 };
 
 DropDownList.defaultProps = {
@@ -51,7 +52,9 @@ DropDownList.defaultProps = {
   name: "",
   isLoading: false,
   className: "",
-  isClearable: true
+  isClearable: true,
+  classNamePrefix: "",
+  handleInputChange: () => {}
 };
 
 export default DropDownList;
