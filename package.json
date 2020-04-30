@@ -6,9 +6,28 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "canvasjs": "^1.8.3",
+    "chart.js": "^2.9.3",
+    "classnames": "^2.2.6",
+    "immutable": "^4.0.0-rc.12",
+    "immutable-prop-types": "^0.0.3",
+    "node-sass": "^4.14.0",
+    "plotly.js": "^1.53.0",
+    "prop-types": "^15.6.1",
+    "ramda": "^0.27.0",
     "react": "^16.13.0",
+    "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-plotly.js": "^2.4.0",
+    "react-redux": "^7.2.0",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "react-select": "^3.1.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,6 +37,21 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "jest --bail --findRelatedTests"
+    ],
+    "*.{js,jsx}": [
+      "pretty-quick --staged",
+      "eslint --fix",
+      "git add "
+    ]
   },
   "browserslist": {
     "production": [
@@ -30,5 +64,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-import-resolver-babel-module": "^5.0.1",
+    "eslint-plugin-immutablejs": "^0.1.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "prettier": "^1.19.1"
   }
 }
