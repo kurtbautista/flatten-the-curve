@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { isNil, isEmpty } from "ramda";
 import classNames from "classnames";
 import Fade from "react-reveal/Fade";
+import Spinner from "../Spinner";
 import DropDownList from "../DropDownList";
 import ChartLine from "./ChartLine";
 import CovidCount from "./CovidCount";
@@ -88,6 +89,7 @@ const CovidStatus = ({
         isChartShow && styles.withChart
       )}
     >
+      {isFetching && <Spinner />}
       <div className={classNames(styles.col, styles.colVertical)}>
         <div className={styles.headerTitle}>
           <Fade bottom when={!isFetching}>
